@@ -19,7 +19,12 @@
     @livewireStyles
 </head>
 
-<body>
+<body x-data="{
+    open: false,
+}" :class="{
+    'overflow-hidden': open,
+
+}" :class="sm: overflow - auto">
 
     @include('layouts.includes.admin.navigation');
 
@@ -30,6 +35,10 @@
             {{ $slot }}
         </div>
     </div>
+
+    <div x-cloak
+    x-on:click="open = false"
+    x-show="open" class="bg-gray-900 bg-opacity-50 fixed inset-0 z-30 sm:hidden"></div>
 
     @stack('modals')
 
