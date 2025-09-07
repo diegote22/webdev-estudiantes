@@ -34,8 +34,15 @@
     @include('layouts.includes.admin.sidebar')
 
     <div class="p-4 sm:ml-64">
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-            {{ $slot }}
+        <div class="p-4 mt-14">
+            @if(isset($header))
+                <div class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+                    @include('layouts.includes.admin.header')
+                </div>
+            @endif
+            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+                {{ $slot }}
+            </div>
         </div>
     </div>
 

@@ -1,4 +1,12 @@
 <x-admin-layout>
+    <x-slot name="header">
+        Panel de Administración
+    </x-slot>
+    
+    <x-slot name="description">
+        Bienvenido al panel de administración de WebDev Estudiantes
+    </x-slot>
+
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae corporis quibusdam facilis laudantium veniam, adipisci suscipit aut praesentium saepe aspernatur iure quo id modi ipsum officia officiis fugit sequi. Magnam.</p>
 <p>Ipsum iure, impedit sint possimus illum quas tempore repellat sunt animi! Necessitatibus saepe vitae culpa, facere aspernatur ab! Corporis, explicabo esse. Laborum natus repellendus alias consequatur harum? Facilis, eaque ratione?</p>
 <p>Doloremque, praesentium magni modi ut nulla debitis natus iusto dolorem tenetur animi, vitae voluptatum eos porro doloribus soluta dolor. Iste quam alias totam nobis optio. Id commodi cupiditate porro hic?</p>
