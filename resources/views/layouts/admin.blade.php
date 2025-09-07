@@ -22,27 +22,20 @@
     <script src="https://kit.fontawesome.com/282fd0a33c.js" crossorigin="anonymous"></script>
 </head>
 
-<body x-data="{
-    open: false,
-}" :class="{
-    'overflow-hidden': open,
-
-}" :class="sm: overflow - auto">
+<body class="font-sans antialiased sm:overflow-auto" x-data="{ open: false }" :class="{ 'overflow-hidden': open }">
 
     @include('layouts.includes.admin.navigation')
 
     @include('layouts.includes.admin.sidebar')
 
     <div class="p-4 sm:ml-64">
-        <div class="p-4 mt-14">
-            @if(isset($header))
-                <div class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
-                    @include('layouts.includes.admin.header')
-                </div>
-            @endif
-            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-                {{ $slot }}
+        @if((isset($header) && trim($header)) || (isset($description) && trim($description)))
+            <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm mt-16">
+                @include('layouts.includes.admin.header')
             </div>
+        @endif
+        <div>
+            {{ $slot }}
         </div>
     </div>
 
