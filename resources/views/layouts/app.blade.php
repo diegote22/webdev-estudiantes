@@ -15,13 +15,35 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
-        @livewireStyles
+    {{-- @livewireStyles --}}
     </head>
     <body class="font-sans antialiased">
         <x-banner />
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @livewire('navigation-menu')
+            <!-- Header público -->
+            <header class="bg-white shadow-sm">
+                <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
+                    <a href="/" class="flex items-center gap-3">
+                        <img src="/logo.png" alt="Logo" class="w-10 h-10 rounded-full object-cover bg-blue-100" onerror="this.style.display='none'">
+                        <span class="text-xl font-bold text-blue-700">WebDev Salud</span>
+                    </a>
+                    <nav class="hidden md:flex gap-6 text-sm font-medium">
+                        <a href="/" class="hover:text-blue-700">Inicio</a>
+                        <a href="#cursos" class="hover:text-blue-700">Cursos</a>
+                        <a href="#como-funciona" class="hover:text-blue-700">Cómo funciona</a>
+                        <a href="#contacto" class="hover:text-blue-700">Contacto</a>
+                    </nav>
+                    <div class="flex items-center gap-2">
+                        @auth
+                            <a href="{{ route('admin.dashboard') }}" class="px-4 py-2 rounded border border-blue-700 text-blue-700 font-semibold hover:bg-blue-50">Panel</a>
+                        @else
+                            <a href="{{ route('login') }}" class="px-4 py-2 rounded bg-blue-700 text-white font-semibold hover:bg-blue-800">Iniciar sesión</a>
+                            <a href="{{ route('register') }}" class="px-4 py-2 rounded border border-blue-700 text-blue-700 font-semibold hover:bg-blue-50">Registrarse</a>
+                        @endauth
+                    </div>
+                </div>
+            </header>
 
             <!-- Page Heading -->
             @if (isset($header))
