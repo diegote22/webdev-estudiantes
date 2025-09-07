@@ -17,6 +17,9 @@
 
     <!-- Styles -->
     @livewireStyles
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/282fd0a33c.js" crossorigin="anonymous"></script>
 </head>
 
 <body x-data="{
@@ -26,9 +29,9 @@
 
 }" :class="sm: overflow - auto">
 
-    @include('layouts.includes.admin.navigation');
+    @include('layouts.includes.admin.navigation')
 
-    @include('layouts.includes.admin.sidebar');
+    @include('layouts.includes.admin.sidebar')
 
     <div class="p-4 sm:ml-64">
         <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
