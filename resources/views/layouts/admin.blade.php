@@ -17,7 +17,7 @@
 
     <!-- Styles -->
     @livewireStyles
-    
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/282fd0a33c.js" crossorigin="anonymous"></script>
 </head>
@@ -29,19 +29,22 @@
     @include('layouts.includes.admin.sidebar')
 
     <div class="p-4 sm:ml-64">
-        @if((isset($header) && trim($header)) || (isset($description) && trim($description)))
+        @if ((isset($header) && trim($header)) || (isset($description) && trim($description)))
             <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm mt-16">
                 @include('layouts.includes.admin.header')
             </div>
         @endif
+        @php
+            $breadcrumb = \App\Helpers\BreadcrumbHelper::generate();
+        @endphp
+        <x-breadcrumb :items="$breadcrumb" />
         <div>
             {{ $slot }}
         </div>
     </div>
 
-    <div x-cloak
-    x-on:click="open = false"
-    x-show="open" class="bg-gray-900 bg-opacity-50 fixed inset-0 z-30 sm:hidden"></div>
+    <div x-cloak x-on:click="open = false" x-show="open"
+        class="bg-gray-900 bg-opacity-50 fixed inset-0 z-30 sm:hidden"></div>
 
     @stack('modals')
 

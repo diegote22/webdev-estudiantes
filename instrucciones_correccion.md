@@ -3,6 +3,7 @@
 En tu archivo `resources\views\layouts\includes\admin\sidebar.blade.php`, necesitas hacer el siguiente cambio:
 
 Buscar:
+
 ```php
 $links = [
     [
@@ -14,6 +15,7 @@ $links = [
 ```
 
 Reemplazar por:
+
 ```php
 $links = [
     [
